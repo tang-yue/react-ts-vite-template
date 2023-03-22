@@ -1,23 +1,19 @@
-import { useState } from 'react'
-import { useRoutes } from "react-router-dom"
+import { Suspense, useState } from 'react'
+import { DotLoading } from 'antd-mobile'
 import {
-  createHashRouter,
-  createBrowserRouter,
   RouterProvider,
   Route
 } from 'react-router-dom'
 import routes from './routes/index'
-
-// import routes from './routes'
 import './App.scss'
 
 function App() {
-  // const [route, setRoute] = useState(routes)
-  // const element = useRoutes(route)
-
-  return (<div className="App">
+  /* Suspense 是为了报错error的时候捕捉不到错误
+     例如直接访问/index的时候
+  */
+  return (<Suspense fallback={ <DotLoading /> }>
     <RouterProvider router={routes}></RouterProvider>
-  </div>)
+  </Suspense>)
 }
 
 export default App
