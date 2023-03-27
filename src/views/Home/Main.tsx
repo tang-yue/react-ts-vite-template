@@ -1,14 +1,15 @@
+import React from 'react'
 import Test from '@/components/test'
-import { UserInfoType } from "@/store/types"
-import { useDispatch, useSelector } from "react-redux";
+import { UserInfoType } from '@/store/types'
+import { useDispatch, useSelector } from 'react-redux'
 import { SetUserInfoFun } from '@/store/actions/users/types'
 import { Button } from 'antd-mobile'
 
 const Home: React.FC<{ userInfo: UserInfoType, setUserInfo: SetUserInfoFun }> = (props) => {
 
   const { userInfo, setUserInfo } = props
-   // 就可以直接使用 userInfo 和 setUserInfo
-  const dispatch = useDispatch();
+  // 就可以直接使用 userInfo 和 setUserInfo
+  const dispatch = useDispatch()
   const jump = () => {
     console.log('jump')
   }
@@ -22,6 +23,5 @@ const Home: React.FC<{ userInfo: UserInfoType, setUserInfo: SetUserInfoFun }> = 
     <Button onClick={jump}>点击跳转新地址</Button>
   </div>)
 }
-
 
 export default Home
