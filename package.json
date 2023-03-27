@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx src"
   },
   "dependencies": {
     "@types/react-router": "5.1.20",
